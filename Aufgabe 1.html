@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html style="direction: ltr;" lang="de"><head> <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> <meta name="GENERATOR" content="Mozilla/4.78 [en] (Win98; U) [Netscape]"><title>Aufgabe 1</title><!-- file: Tutorial.html rmi10 author: T. Graf history: 20. March 1998 - file creation - graf --><!-- ----------------------------------------------------------------- -->
+<script language="JavaScript">
+function frage(antwort)
+{
+if ( antwort == "OnlineBank" )
+{
+alert("Richtig, die Klasse, welche die Remote Methoden anbietet muß mit dem rmic kompiliert werden!");
+}
+else
+{
+alert ("Leider falsch");
+}
+}
+</script></head>
+<body style="background-color: rgb(255, 255, 255); direction: ltr;"><h1>
+<font face="Arial,Helvetica">Aufgabe 1: Die Kunst der Abstraktion<br>
+</font></h1><font face="Arial,Helvetica">In
+dieser Aufgabe werden wir unterschiedliche ADT's gemäß einer
+vorgegebenen Skizze implementieren. Die Skizze wird aus einer innerhalb
+der Praktikumsteilnehmer_innen erstellten Skizze ausgewählt. Ziel ist,
+die Kunst der Abstraktion zu üben. Daher sind die Programme so zu
+gestalten, dass die jeweiligen ADT's einzeln mit anderen Teams
+getauscht werden können, z.B. tauscht Team 06 mit Team 03 die ADT
+Stack, ohne jedoch die ADT Liste zu tauschen.</font><font face="Arial"><b><br>
+</b></font><h2><font face="Arial"><b>Aufgabenstellung</b></font></h2>
+<span style="font-family: Helvetica,Arial,sans-serif;">Die exakten
+technischen Vorgaben (syntaktische Signatur, Dateinamen etc.) werden in
+einer Skizze von einem Team beschrieben werden. Zur Fehlerbehandlung:
+Sollten <br>nicht vorhandene Elemente gelöscht werden, in der Liste an
+unmöglicher Stelle eingefügt werden, etc. ist die Fehlerbehandlung
+durch „Ignorieren“ durchzuführen, d.h. es wird so gehandelt, als hätte
+die Operation nicht stattgefunden. Aus Dokumentationsgründen können
+log-Dateien erstellt werden.<br></span><br style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;">Eine <span style="font-weight: bold;">ADT Liste</span> ist zu implementieren:<br></span><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Vorgabe</span>:<br></span><span style="font-family: Helvetica,Arial,sans-serif;">Funktional (nach außen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Die Liste beginnt bei Position 1;&nbsp;</span></li><li><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;">Die Liste arbeitet nicht destruktiv, d.h. </span><span style="font-family: Helvetica,Arial,sans-serif;">wird ein Element an einer vorhandenen </span><span style="font-family: Helvetica,Arial,sans-serif;">Position eingefügt, wird das dort stehende </span><span style="font-family: Helvetica,Arial,sans-serif;">Element um eine Position verschoben.&nbsp;</span></li><li><span style="font-family: Helvetica,Arial,sans-serif;">Die </span><span style="font-family: Helvetica,Arial,sans-serif;">Elemente sind vom Typ „ganze Zahl“.</span><br></li></ol><span style="font-family: Helvetica,Arial,sans-serif;">Technisch (nach innen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Der ADT Liste ist intern mittels eines Java-Arrays zu </span><span style="font-family: Helvetica,Arial,sans-serif;">realisieren (…new int[?]…)</span><br></li></ol><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Objektmengen:</span> pos, elem, list<br><span style="font-weight: bold;">Operationen</span>: (semantische Signatur)</span><br><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;">create: &#8709; &#8594; list&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br><span style="font-family: Helvetica,Arial,sans-serif;">isEmpty: list &#8594; bool </span><br><span style="font-family: Helvetica,Arial,sans-serif;">laenge: list &#8594; int </span><br><span style="font-family: Helvetica,Arial,sans-serif;">insert: list × pos × elem &#8594; list</span><br><span style="font-family: Helvetica,Arial,sans-serif;">delete: list × pos &#8594; list</span><br><span style="font-family: Helvetica,Arial,sans-serif;">find: list × elem &#8594; pos&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br><span style="font-family: Helvetica,Arial,sans-serif;">retrieve: list × pos &#8594; elem</span><br><span style="font-family: Helvetica,Arial,sans-serif;">concat: list × list &#8594; list</span><br style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"></span></div></div><span style="font-family: Helvetica,Arial,sans-serif;"><br>Eine <span style="font-weight: bold;">ADT Stack</span> ist zu implementieren:<br></span><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Vorgabe</span>:<br></span><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;">Technisch (nach innen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Der ADT Stack ist mittels ADT Liste zu realisieren.</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br></li></ol><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Objektmengen: </span>elem, stack<span style="font-weight: bold;"><br>Operationen</span>: (semantische Signatur)</span><br><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;">createS: &#8709; &#8594; stack<br>push: stack × elem &#8594; stack<br>pop: stack &#8594; stack<br>top: stack &#8594; elem<br>isEmptyS: stack &#8594; bool</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"></span></div></div><span style="font-family: Helvetica,Arial,sans-serif;"><br>Eine <span style="font-weight: bold;">ADT Queue </span>ist zu implementieren:<br></span><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Vorgabe</span>:<br></span><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;">Technisch (nach innen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Der
+ADT Queue ist mittels ADT Stack, wie in der Vorlesung voirgestellt, zu
+realisieren. Es sind z.B. zwei explizite Stacks zu verwenden und das
+„umstapeln“ ist nur bei Zugriff auf einen leeren „out-Stack“
+durchzuführen.</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br></li></ol><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Operationen</span>: (semantische Signatur)</span><br><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;">createQ: &#8709; &#8594; queue<br>front : queue &#8594; elem (Selektor)<br>enqueue : queue × elem &#8594; queue<br>dequeue : queue &#8594; queue (Mutator)<br>isEmptyQ : queue &#8594; bool</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br></div><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><span style="font-family: Helvetica,Arial,sans-serif;"><br>Eine <span style="font-weight: bold;">ADT Array</span> ist zu implementieren:<br></span><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Vorgabe</span>:<br></span><span style="font-family: Helvetica,Arial,sans-serif;">Funktional (nach außen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Das Array beginnt bei Position 0. </span></li><li><span style="font-family: Helvetica,Arial,sans-serif;">Das
+Array arbeitet destruktiv, d.h. wird ein Element an einer vorhandenen
+Position&nbsp;eingefügt, wird das dort stehende Element&nbsp;überschrieben.&nbsp;</span></li><li><span style="font-family: Helvetica,Arial,sans-serif;">Die
+Länge des Arrays wird bestimmt durch die bis zur aktuellen Abfrage
+größten vorhandenen und explizit mittels &nbsp;beschriebenen Position im
+array.</span></li><li><span style="font-family: Helvetica,Arial,sans-serif;">Das
+Array ist mit 0 initialisiert, d.h. greift man auf eine bisher noch
+nicht beschriebene Position im Array zu erhält man 0 als Wert.</span></li><li><span style="font-family: Helvetica,Arial,sans-serif;">Das Array hat keine Größenbeschränkung, d.h. bei der Initialisierung wird keine Größe vorgegeben.</span></li></ol><span style="font-family: Helvetica,Arial,sans-serif;">Technisch (nach innen)<br></span><ol><li><span style="font-family: Helvetica,Arial,sans-serif;">Der ADT </span><span style="font-family: Helvetica,Arial,sans-serif;">Array ist mittels ADT Liste zu realisieren.</span></li></ol></div><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Objektmengen:</span> pos, elem, array</span><br><span style="font-family: Helvetica,Arial,sans-serif;"><span style="font-weight: bold;">Operationen</span>: (semantische Signatur)</span><br><div style="margin-left: 40px;"><span style="font-family: Helvetica,Arial,sans-serif;">initA: &#8709; &#8594; array<br>setA: array × pos × elem &#8594; array<br>getA: array × pos &#8594; elem<br>lengthA: array &#8594; pos</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br></div><span style="font-family: Helvetica,Arial,sans-serif;"></span></div><span style="font-family: Helvetica,Arial,sans-serif;"><br>Zudem sind für die jeweilige ADT <span style="font-weight: bold;">JUnit-Tests</span>
+zu implementieren, die einfach ausgetauscht werden können (als *.jar
+z.B. adtlisteJUt.jar speichern, siehe Vorgabe in der Skizze). Beachten
+Sie: die Tests sollten auch Belastungen (große Datenmengen) und
+Grenzfälle beinhalten. Die Tests werden ausgetauscht werden. <br style="font-family: Helvetica,Arial,sans-serif;"></span><h2 style="font-family: Helvetica,Arial,sans-serif;">Abnahme<br>
+</h2><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;"></span><span style="font-family: Helvetica,Arial,sans-serif;">Da die Aufgaben des&nbsp;</span><span style="font-family: Helvetica,Arial,sans-serif;">Praktikums</span><span style="font-family: Helvetica,Arial,sans-serif;"> sehr frühzeitig im WWW zur
+Verfügung stehen, wird die Abnahme stark auf eine </span><span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">vorbereitende Arbeit</span><span style="font-family: Helvetica,Arial,sans-serif;">
+aufgebaut.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+
+<span style="font-family: Helvetica,Arial,sans-serif;">
+
+
+&nbsp;</span><br style="font-family: Helvetica,Arial,sans-serif;">
+
+
+
+
+<span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">Bis Sonntag Abend</span><span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;"> 20:00 Uhr</span><span style="font-family: Helvetica,Arial,sans-serif;">
+<span style="font-weight: bold; color: rgb(204, 0, 0);">zwei Wochen </span>vor Ihrem
+Praktikumstermin ist eine erste <a href="http://users.informatik.haw-hamburg.de/%7Eklauck/AlguDat/Entwurf.pdf">Skizze</a> der Aufgabe
+als
+*.pdf Dokument (<a href="http://users.informatik.haw-hamburg.de/%7Eklauck/AlguDat/PFormal.zip">Dokumentationskopf</a> nicht vergessen!) mir per E-Mail zuzusenden (Gruppe 1 11.10; Gruppe 2 18.10; Gruppe 3 25.10). Ggf.
+können offene Fragen mit gesendet
+werden.&nbsp;</span><span style="font-family: Helvetica,Arial,sans-serif;">Die Skizze <span style="font-weight: bold;">muss</span> grob beschreiben, wie Sie sich die Realisierung
+denken.</span><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span><span style="font-family: Helvetica,Arial,sans-serif;">Als
+erfolgreich wird eine Skizze bewertet, wenn Ihre Kenntnisse bzgl. der
+gestellten Aufgabe eine erfolgreiche Teilnahme an dem Praktikumstermin
+in Aussicht stellen.<br>&nbsp;<br></span><span style="font-family: Helvetica,Arial,sans-serif;">Am Tag des
+Praktikums findet eine Befragung von Teams statt. Die </span><span style="font-weight: bold; font-family: Helvetica,Arial,sans-serif;">Befragung
+muss erfolgreich absolviert werden</span><span style="font-family: Helvetica,Arial,sans-serif;">, um weiter
+am Praktikum teilnehmen zu können. Ist die Befragung nicht
+erfolgreich, gilt die Aufgabe als nicht erfolgreich bearbeitet.&nbsp;</span><span style="font-family: Helvetica,Arial,sans-serif;">Als
+erfolgreich wird die Befragung bewertet, wenn Ihre
+Kenntnisse bzgl. der gestellten Aufgabeausreichend oder besser sind.
+Dazu gehört insbesondere eine mindetsens ausreichende Kenntnis über Ihren gesamten Code.</span><span style="font-family: Helvetica,Arial,sans-serif;"> Bei der Befragung handelt es sich nicht um die Abnahme.<br></span><span style="font-family: Helvetica,Arial,sans-serif;"><br></span><span style="font-weight: bold; color: rgb(255, 0, 0); font-family: Helvetica,Arial,sans-serif;">Abgabe</span><span style="font-family: Helvetica,Arial,sans-serif;">:</span><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;Unmittelbar
+am Ende des Praktikums, spätestens bis 19:00 Uhr am selben Tag, ist von
+allen Teams der Code abzugeben. Zu dem
+Code gehören die Sourcedateien, die ggf. erzeugten&nbsp; *.log etc.
+Dateien, die während der Tests erzeugt wurden, und eine Readme.txt
+Datei, in der ausführlich beschrieben wird, wie die Software zu starten
+ist! Zudem ist der aktuelle Dokumentationskopf abzugeben. Die Dateien
+sind als *.zip Ordner (mit cc an den/die Teampratner_in) per E-Mail
+abzugeben. Die Abgabe gehört zu den PVL-Bedingungen und ist
+einzuhalten,
+terminlich wie auch inhaltlich!<br><br></span><span style="font-family: Helvetica,Arial,sans-serif;">Wird eine
+Aufgabe nicht erfolgreich
+bearbeitet,
+gilt&nbsp;die </span><b style="font-family: Helvetica,Arial,sans-serif;">PVL</b><span style="font-family: Helvetica,Arial,sans-serif;">
+als </span><b style="font-family: Helvetica,Arial,sans-serif;">nicht
+bestanden</b><span style="font-family: Helvetica,Arial,sans-serif;">.
+Damit eine Aufgabe als erfolgreich gewertet wird, muß die
+Befragung&nbsp;als erfolgreich gewertet
+werden sowie die Abgabe abgenommen worden sein. <span style="font-weight: bold;">Alle
+gesetzten Termine sind einzuhalten</span>. Dies ist notwendig, da
+sonst
+erhebliche
+zeitliche Verzögerungen stattfinden würden</span><span style="font-family: Helvetica,Arial,sans-serif;">.</span><span style="font-family: Helvetica,Arial,sans-serif;">.</span><span style="font-family: Helvetica,Arial,sans-serif;"></span><br style="font-family: Helvetica,Arial,sans-serif;"><span style="font-family: Helvetica,Arial,sans-serif;"><span style="color: rgb(255, 102, 0); font-weight: bold;"></span></span><span style="font-family: Helvetica,Arial,sans-serif;"><span style="color: rgb(255, 102, 0); font-weight: bold;"></span></span><br style="font-family: Helvetica,Arial,sans-serif;"><br><br><!-- BEGINN GOWEB WEBCOUNTER --><p></p><center><a href="http://www.webcounter.goweb.de/"><img src="Aufgabe%201-Dateien/12337.GIF" alt="gratis Counter by GOWEB" border="0" vspace="0"></a><br><a href="http://www.webcounter.goweb.de/"><font color="#4c4c4c" size="-2">Gratis Counter by GOWEB</font></a>
+</center><!-- ENDE GOWEB WEBCOUNTER --></body></html>
