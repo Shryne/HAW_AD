@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/progress">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/Starter.java">
           <value>
             <set />
@@ -18,12 +23,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtArrayTest.java">
+        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/adt/interfaces/AdtList.java">
+        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.kt">
           <value>
             <set />
           </value>

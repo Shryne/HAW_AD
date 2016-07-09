@@ -26,14 +26,15 @@ public class AdtArrayTest {
 	
 	private AdtArray array_31;
 	
-	@Before public void reset() {
+	@Before
+	public void reset() {
 		array0 = adtArray();
 		array20 = adtArray();
 		array100 = adtArray();
 		array2150 = adtArray();
 		
 		array_31 = adtArray();
-		
+
 		for (int i = 0; i <= 19; i++) array20.set(i, i);
 		for (int i = -20; i <= 79; i++) array100.set(i + 20, i);
 		for (int i = 100; i <= 2249; i++) array2150.set(i - 100, i);
@@ -44,7 +45,8 @@ public class AdtArrayTest {
 	// ##################################################
 	// tests
 	// ##################################################
-	@Test public void length() {
+	@Test
+	public void length() {
 		assertEquals(array0.length(), -1);
 		assertEquals(array20.length(), 19);
 		assertEquals(array100.length(), 99);
@@ -53,7 +55,8 @@ public class AdtArrayTest {
 		assertEquals(array_31.length(), 30);
 	}
 	
-	@Test public void equals() {
+	@Test
+	public void equals() {
 		// arrayA == arrayB && arrayB == arrayA to prove symmetry
 		assertEquals(array0, array0);
 		assertEquals(array100, array100);

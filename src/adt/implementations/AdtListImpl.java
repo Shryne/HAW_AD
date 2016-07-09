@@ -18,8 +18,19 @@ class AdtListImpl implements AdtList {
 	// variables
 	// ##################################################
     private static final int START_POS = 1;
-    private static final int START_CAPACITY = 32;
-    private int container[] = new int[START_CAPACITY];
+    private static final int START_CAPACITY = 100_000;
+    private static final double GROWING_FACTOR = 1.5;
+
+    private int capacity = START_CAPACITY;
+    private int length;
+
+    /*
+    As a result of the requirement that the list starts by 1,
+    the indices are all shifted. I decided against using a
+    method to calculate the indices. Instead I just ignore
+    the first index and use the rest as always.
+     */
+    private int container[] = new int[START_POS + capacity];
 
 	// ##################################################
 	// methods
@@ -43,7 +54,7 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public int length() {
-        return container.length;
+        return length;
     }
 
 	/**
@@ -51,10 +62,13 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public void insert(int pos, int elem) {
-		if (!insertable(pos)) return;
+		if (!insertable(pos))
+			return;
+		//if (!fitsIn(1)) grow();
 
-        container.push(pos - 1);
-        container.set(pos - 1, elem);
+        System.arraycopy(container, pos, container, pos + 1, START_POS + length - pos);
+        container[pos] = elem;
+        length++;
 	}
 
 	/**
@@ -62,8 +76,10 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public void delete(int pos) {
-		if (!insideList(pos - 1)) return;
-        container.pop(pos - 1);
+		if (insideList(pos)) {
+			System.arraycopy(container, pos + 1, container, pos, length - pos + START_POS);
+			length--;
+		}
 	}
 
 	/**
@@ -71,10 +87,12 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public int find(int elem) {
-		for (int i = 0; i < length(); i++) 
-			if (container.get(i) == elem) return i + START_POS;
-		
-		return (START_POS - 1); // exception
+		for (int i = START_POS; i <= length; i++) {
+            if (container[i] == elem)
+				return i;
+        }
+
+		return 0;
 	}
 
 	/**
@@ -82,7 +100,7 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public int retrieve(int pos) {
-		return (insideList(pos) ? container.get(pos - START_POS) : 0); // !precondition -> 0
+		return (insideList(pos) ? container[pos] : 0);
 	}
 
 	/**
@@ -90,25 +108,33 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public void concat(AdtList list) {
-		int length = list.length(); // important, if list == this! Otherwise -> overflow!
-			
-		for (int i = START_POS; i <= length; i++)
-			insert(length() + START_POS, list.retrieve(i));
+		int otherLength = list.length(); // important, if list == this! Otherwise -> overflow!
+
+		for (int i = START_POS; i <= otherLength; i++) {
+            insert(START_POS + length, list.retrieve(i));
+        }
 	}
 	
 	// ##################################################
 	// bonus
 	// ##################################################
-	@Override public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof AdtList)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+
+		if (!(o instanceof AdtList))
+			return false;
 		
-		AdtList obj = (AdtListImpl) o;
-		if (length() != obj.length()) return false;
-		
-		for (int i = 0; i < length(); i++)
-			if (container.get(i) != obj.retrieve(i + 1)) return false;
-		
+		AdtList obj = (AdtList) o;
+		if (length != obj.length())
+			return false;
+
+		for (int i = 1; i <= length(); i++) {
+            if (container[i] != obj.retrieve(i))
+				return false;
+        }
+
 		return true;
 	}
 	
@@ -118,22 +144,36 @@ class AdtListImpl implements AdtList {
 	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override public String toString() {
-		return (getClass().getSimpleName() + container);
+	@Override
+	public String toString() {
+		if (isEmpty())
+			return "[]";
+
+		return getClass().getSimpleName() +
+				Arrays.toString(
+						Arrays.copyOfRange(container, START_POS, length + START_POS)
+				);
 	}
 	
 	// ##################################################
 	// private helper
 	// ##################################################
+    private boolean fitsIn(int amount) {
+        return (length + amount <= capacity);
+    }
+
+    private void grow() {
+        capacity *= GROWING_FACTOR;
+        container = Arrays.copyOf(container, capacity + 1); // + 1 because we ignore the first field
+    }
+
 	private boolean insideList(int pos) {
-		return (START_POS <= pos && pos <= length());
+        return (START_POS <= pos && pos <= length);
 	}
 	
 	private boolean insertable(int pos) {
-		return (START_POS <= pos && pos <= (length() + 1));
+		return (START_POS <= pos && pos <= length + 1);
 	}
 
-
-    }
 }
 

@@ -1,0 +1,66 @@
+DATE - TIME SPEND TODAY - TIME SPEND OVERALL
+-----------------------------------------------------------------------
+07.07.2016 - 5:30 h - 5:30 h
+DONE
+- wrote many test cases for AdtList
+- corrected some methods in AdtList
+- thought about other ways to write the tests
+- read some pages in my book about tests and how I could
+shorten them by using equivalence classes
+
+PROBLEMS
+- the tests are depending on each other. If insert doesn't work,
+the rest won't do it, too
+- writing the tests by hand is just annoying and costs to much time
+
+PLANS
+- lower the amount of dependencies inside the tests
+- using equivalence classes for tests
+- finishing AdtList
+- planing the tests for the other container types
+- writing the tests for the other container types
+- planing the benchmark
+
+FEELING
+- quite good
+- feels like i did some work
+
+-----------------------------------------------------------------------
+
+08.07.2016 - 1 h - 6:30 h
+DONE
+- wrote some tests for AdtList.equals. Otherwise I wouldn't be able to see
+in case of all tests failed, if it's just because my equals doesn't work
+correctly, since the most other tests are relying on equals
+- edited some of the inspection settings
+
+PROBLEMS
+- for some reason if I try to put 10 elements in a list, the last seems to
+be lost
+
+PLANS
+
+FEELING
+- unmotivated
+
+-----------------------------------------------------------------------
+9:10
+09.07.2016 - - h
+DONE
+- fixed the bug of the lost last element. Actually that wasn't a problem
+with insert, rather with toString. It swallowed the last element by kicking
+out the zeros created by the length/capacity difference
+- I mistakenly used assertTrue(...equals(...)) instead of assertEquals for
+the concatenation tests. The problem with this is that it won't show me
+the two different lists used for the equality tests
+- the tests for AdtList are working now. I will now start to refactor the
+tests for AdtArray
+
+
+PROBLEMS
+
+PLANS
+
+FEELING
+
+-----------------------------------------------------------------------

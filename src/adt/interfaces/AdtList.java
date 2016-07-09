@@ -13,6 +13,9 @@ package adt.interfaces;
  *
  */
 public interface AdtList extends AdtContainer {
+	/**
+	 * @return True if the list has no elements, otherwise false.
+	 */
 	boolean isEmpty();
 
 	/**
@@ -47,6 +50,7 @@ public interface AdtList extends AdtContainer {
 	int find(int elem);
 	
 	/**
+	 *
 	 * @param pos The position of the element.
 	 * @return The element at the given position.
 	 */
