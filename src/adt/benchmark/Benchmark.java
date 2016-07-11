@@ -1,20 +1,9 @@
-/**
- * 
- */
-package adt.implementations.tests;
-
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+package adt.benchmark;
 
 /**
- * @author remen
- *
- * This class serves as a point to run all tests at once.
+ * Created by Seven on 10.07.2016.
  */
-@RunWith(Suite.class)
-@SuiteClasses({ AdtArrayTest.class, AdtListTest.class, AdtQueueTest.class, AdtStackTest.class })
-public class AdtAllTests {
+public class Benchmark {
     // ##################################################
     // variables
     // ##################################################
@@ -22,6 +11,9 @@ public class AdtAllTests {
     // ##################################################
     // methods
     // ##################################################
+    public Benchmark(String exportPath, boolean overwriteData) {
+
+    }
 
     // ##################################################
     // bonus
@@ -30,4 +22,5 @@ public class AdtAllTests {
     // ##################################################
     // private helper
     // ##################################################
+
 }

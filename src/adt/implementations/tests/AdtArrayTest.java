@@ -133,6 +133,76 @@ public class AdtArrayTest {
 		assertEquals(array0.get(1), 0);
 		assertEquals(array2150T.get(-1), 0);   
 	}
+
+	public static class EqualsTests {
+		@Test
+		public void same() {
+
+		}
+
+		@Test
+		public void empty() {
+
+		}
+
+		@Test
+		public void one() {
+
+		}
+
+		@Test
+		public void some() {
+
+		}
+
+		@Test
+		public void differentLength() {
+
+		}
+
+		@Test
+		public void someFirstDifferent() {
+
+		}
+
+		@Test
+		public void someLastDifferent() {
+
+		}
+
+		@Test
+		public void someMiddleDifferent() {
+
+		}
+
+		@Test
+		public void manyLastDifferent() {
+
+		}
+
+		@Test
+		public void doesNotHarm() {
+
+		}
+
+		@Test
+		public void doesNotHarmParameter() {
+
+		}
+	}
+
+	public static class LengthTests {
+
+	}
+
+	public static class SetTests {
+
+	}
+
+	public static class GetTests {
+
+	}
+
 	// ##################################################
 	// private helper
 	// ##################################################
@@ -144,4 +214,6 @@ public class AdtArrayTest {
 		
 		return result;
 	}
+
+
 }

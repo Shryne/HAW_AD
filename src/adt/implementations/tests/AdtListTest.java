@@ -3,6 +3,7 @@
  */
 package adt.implementations.tests;
 
+import static adt.implementations.AdtContainerFactory.adtSingleConcatList;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -511,7 +512,7 @@ public class AdtListTest {
 	 * @return The constructed list.
 	 */
 	private static AdtList list(int length, CalcFunction function) {
-		AdtList adtList = adtList();
+		AdtList adtList = adtSingleConcatList();
 		for (int i = 1; i <= length; i++) {
 			adtList.insert(i, function.apply(i));
 		}

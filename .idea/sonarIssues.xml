@@ -3,12 +3,52 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../../4. Semester/RN/Praktikum/FPK/Client_1/src/com/company/MyMain.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../../4. Semester/RN/Praktikum/FPK/Client_1/src/com/company/Position.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../../4. Semester/RN/Praktikum/FPK/Client_1/src/com/company/Rectangle.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../../4. Semester/RN/Praktikum/FPK/GenerateClient/src/com/company/Main.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/progress">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/Starter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/AdtListSingleConc.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/benchmark/Benchmark.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/implementations/AdtContainerFactory.java">
           <value>
             <set />
           </value>
@@ -23,12 +63,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtArrayTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AlternativeAdtListTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/interfaces/AdtArray.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../../java stuff/SomeBasicHacking/src/Start.kt">
           <value>
             <set />
           </value>

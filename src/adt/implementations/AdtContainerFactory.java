@@ -3,6 +3,7 @@
  */
 package adt.implementations;
 
+import adt.AdtListSingleConc;
 import adt.interfaces.AdtArray;
 import adt.interfaces.AdtList;
 import adt.interfaces.AdtQueue;
@@ -23,4 +24,6 @@ public class AdtContainerFactory {
 	public static AdtStack adtStack() { return AdtStackImpl.valueOf(); }
 	public static AdtQueue adtQueue() { return AdtQueueImpl.valueOf(); }
 	public static AdtArray adtArray() { return AdtArrayImpl.valueOf(); }
+
+	public static AdtList adtSingleConcatList() { return AdtListSingleConc.valueOf(); }
 }

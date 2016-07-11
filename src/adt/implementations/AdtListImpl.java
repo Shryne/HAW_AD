@@ -4,10 +4,8 @@
 package adt.implementations;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 import adt.interfaces.AdtList;
-import org.junit.Test;
 
 /**
  * @author remen
@@ -18,7 +16,7 @@ class AdtListImpl implements AdtList {
 	// variables
 	// ##################################################
     private static final int START_POS = 1;
-    private static final int START_CAPACITY = 100_000;
+    private static final int START_CAPACITY = 32;
     private static final double GROWING_FACTOR = 1.5;
 
     private int capacity = START_CAPACITY;
@@ -30,14 +28,14 @@ class AdtListImpl implements AdtList {
     method to calculate the indices. Instead I just ignore
     the first index and use the rest as always.
      */
-    private int container[] = new int[START_POS + capacity];
+    private int[] container = new int[START_POS + capacity];
 
 	// ##################################################
 	// methods
 	// ##################################################
 	private AdtListImpl() {}
-	
-	public static AdtList valueOf() {
+
+	static AdtList valueOf() {
         return new AdtListImpl();
     }
 	
@@ -46,7 +44,7 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public boolean isEmpty() {
-        return (length() == 0);
+        return length() == 0;
 	}
 
 	/**
@@ -64,7 +62,8 @@ class AdtListImpl implements AdtList {
 	public void insert(int pos, int elem) {
 		if (!insertable(pos))
 			return;
-		//if (!fitsIn(1)) grow();
+		if (!fitsIn(1))
+			grow();
 
         System.arraycopy(container, pos, container, pos + 1, START_POS + length - pos);
         container[pos] = elem;
@@ -100,7 +99,7 @@ class AdtListImpl implements AdtList {
 	 */
 	@Override
 	public int retrieve(int pos) {
-		return (insideList(pos) ? container[pos] : 0);
+		return insideList(pos) ? container[pos] : 0;
 	}
 
 	/**
@@ -137,6 +136,11 @@ class AdtListImpl implements AdtList {
 
 		return true;
 	}
+
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(container);
+	}
 	
 	/*
 	 * AdtList with the elements: 1, 2, 3, 4 ->
@@ -147,7 +151,7 @@ class AdtListImpl implements AdtList {
 	@Override
 	public String toString() {
 		if (isEmpty())
-			return "[]";
+			return "AdtList[]";
 
 		return getClass().getSimpleName() +
 				Arrays.toString(
@@ -159,7 +163,7 @@ class AdtListImpl implements AdtList {
 	// private helper
 	// ##################################################
     private boolean fitsIn(int amount) {
-        return (length + amount <= capacity);
+        return length + amount <= capacity;
     }
 
     private void grow() {
@@ -168,11 +172,11 @@ class AdtListImpl implements AdtList {
     }
 
 	private boolean insideList(int pos) {
-        return (START_POS <= pos && pos <= length);
+        return START_POS <= pos && pos <= length;
 	}
 	
 	private boolean insertable(int pos) {
-		return (START_POS <= pos && pos <= length + 1);
+		return START_POS <= pos && pos <= length + 1;
 	}
 
 }

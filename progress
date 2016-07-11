@@ -44,8 +44,8 @@ FEELING
 - unmotivated
 
 -----------------------------------------------------------------------
-9:10
-09.07.2016 - - h
+
+09.07.2016 - 1:30 h - 8:00 h
 DONE
 - fixed the bug of the lost last element. Actually that wasn't a problem
 with insert, rather with toString. It swallowed the last element by kicking
@@ -55,12 +55,55 @@ the concatenation tests. The problem with this is that it won't show me
 the two different lists used for the equality tests
 - the tests for AdtList are working now. I will now start to refactor the
 tests for AdtArray
-
+- I forgot to reimplement the growing of the array in AdtList. Now it works,
+too
+- added some comments for AdtArray interface. I've no idea, why I didn't do that
+long before (laziness?)
 
 PROBLEMS
 
 PLANS
+- experiment with the equivalence class tests
 
 FEELING
+- ok. I could've worked longer, but at least I fixed the bugs.
+
+-----------------------------------------------------------------------
+10.07.2016 - 1h - 9: 00 h
+DONE
+
+
+PROBLEMS
+- tried the equivalence class testing stuff, but it's harder than expected,
+especially if I want to do it in a more abstract way.
+
+PLANS
+- writing an abstract benchmark suite
+
+FEELING
+- not good. I am dealing with the problem that I can't pass something like a
+link to a function and in my case, I can't even use a lambda to simulate that.
+
+-----------------------------------------------------------------------
+14:40 - 16:25; 17:00 -
+11.07.2016 - -
+DONE
+- tried to change the implementation of find in AdtListImpl, like it was mentioned
+in the course sheets. Unfortunately it doesn't work correctly on lists with duplications.
+- implemented tests (ok, I just switched the adtList to adtSingleConc call.
+Thank you past self for using an interface) for a single concatenated list as well as the list itself
+
+PROBLEMS
+- some tests for the SC list fail, because of the lack of memory
+- I got some very strange fail massages, like "AdtListSingleConc[1, 2] != AdtListSingleConc[1, 2]"
+and I had to switch the toString method to get a useful massage
+- there are definitely to many instanceof checks. I guess it would've been nicer, if I used an isEmpty
+method in Entry or something similar
+
+PLANS
+- implement the double concatenated list
+
+FEELING
+- nice. It was fun to implement it :)
 
 -----------------------------------------------------------------------
