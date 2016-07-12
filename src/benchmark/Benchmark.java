@@ -1,4 +1,4 @@
-package adt.benchmark;
+package benchmark;
 
 /**
  * Created by Seven on 10.07.2016.

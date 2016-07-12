@@ -85,8 +85,7 @@ FEELING
 link to a function and in my case, I can't even use a lambda to simulate that.
 
 -----------------------------------------------------------------------
-14:40 - 16:25; 17:00 -
-11.07.2016 - -
+11.07.2016 - 3 h - 12 h
 DONE
 - tried to change the implementation of find in AdtListImpl, like it was mentioned
 in the course sheets. Unfortunately it doesn't work correctly on lists with duplications.
@@ -101,9 +100,22 @@ and I had to switch the toString method to get a useful massage
 method in Entry or something similar
 
 PLANS
-- implement the double concatenated list
+- implement benchmark
 
 FEELING
 - nice. It was fun to implement it :)
 
 -----------------------------------------------------------------------
+1 h
+12.07.2016 - -
+DONE
+- implemented some tests for all sorts
+- implemented insertion sort
+
+PROBLEMS
+- writing the same tests for multiple objects with the same interface is problematic.
+I have to discover, how to do it more nicely with junit
+
+PLANS
+
+FEELING
