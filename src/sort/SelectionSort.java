@@ -19,7 +19,7 @@ public class SelectionSort implements Sort {
     @Override
     public void sort(AdtArray array) {
         if (array != null) {
-            for (int i = 0; i < array.length() - 1; i++) {
+            for (int i = 0; i <= array.length() - 1; i++) {
                 int minIndex = findMinStartingAt(i, array);
                 swap(array, i, minIndex);
             }
@@ -34,7 +34,7 @@ public class SelectionSort implements Sort {
     // ##################################################
     private static int findMinStartingAt(int startIndex, AdtArray array) {
         int minIndex = startIndex;
-        for (int i = startIndex + 1; i < array.length(); i++) {
+        for (int i = startIndex + 1; i <= array.length(); i++) {
             if (array.get(i) < array.get(minIndex)) {
                 minIndex = i;
             }

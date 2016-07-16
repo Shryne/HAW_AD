@@ -120,11 +120,14 @@ PLANS
 FEELING
 
 -----------------------------------------------------------------------
-1 h, 17:25 -
+2 h
 16.07.2016 - -
 DONE
 
 PROBLEMS
+- it's annoying to have all these differences between the real length and start from normal array
+and lists (in general: collections) and the ones from my own implemented collections (which I
+had to do this way, because it was given by the exercise)
 
 PLANS
 
