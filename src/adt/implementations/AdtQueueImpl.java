@@ -7,8 +7,7 @@ import adt.interfaces.AdtQueue;
 import adt.interfaces.AdtStack;
 
 /**
- * @author remen
- *
+ * An AdtQueue implementation based on two stacks.
  */
 class AdtQueueImpl implements AdtQueue {
 	// ##################################################
@@ -21,45 +20,63 @@ class AdtQueueImpl implements AdtQueue {
 	// methods
 	// ##################################################
 	private AdtQueueImpl() {}
-	
-	public static AdtQueue valueOf() { return new AdtQueueImpl(); }
+
+	/**
+	 * A factory method used to create an AdtQueue.
+     */
+	public static AdtQueue valueOf() {
+		return new AdtQueueImpl();
+	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtQueue#isEmpty()
 	 */
-	@Override public boolean isEmpty() { 
-		return (inStack.isEmpty() && outStack.isEmpty()); 
+	@Override
+	public boolean isEmpty() {
+		return inStack.isEmpty() && outStack.isEmpty();
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtQueue#front()
 	 */
-	@Override public int front() {
-		if (outStack.isEmpty()) AdtStackImpl.fromStackToStack(inStack, outStack);
+	@Override
+	public int front() {
+		if (outStack.isEmpty()) {
+			AdtStackImpl.fromStackToStack(inStack, outStack);
+		}
 		return outStack.top();
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtQueue#enQueue(int)
 	 */
-	@Override public void enQueue(int elem) {
+	@Override
+	public void enQueue(int elem) {
 		inStack.push(elem);
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtQueue#deQueue()
 	 */
-	@Override public void deQueue() {
-		if (outStack.isEmpty()) AdtStackImpl.fromStackToStack(inStack, outStack);
+	@Override
+	public void deQueue() {
+		if (outStack.isEmpty()) {
+			AdtStackImpl.fromStackToStack(inStack, outStack);
+		}
 		outStack.pop();
 	}
 	
 	// ##################################################
 	// bonus
 	// ##################################################
-	@Override public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof AdtQueue)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof AdtQueue)) {
+			return false;
+		}
 		
 		AdtQueue backUpThis  = valueOf();
 		AdtQueue backUpOther  = valueOf();
@@ -80,8 +97,13 @@ class AdtQueueImpl implements AdtQueue {
 		return true;
 	}
 
+	@Override
+	public int hashCode() {
+		return inStack.hashCode() * 3 + outStack.hashCode() * 7;
+	}
 	
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		AdtStackImpl.fromStackToStack(inStack, outStack);
 		
 		String stackName = outStack.getClass().getSimpleName();

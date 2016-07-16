@@ -18,12 +18,40 @@ import adt.interfaces.AdtStack;
  */
 public class AdtContainerFactory {
 	// To prohibit instantiation and inheritance.
-	public AdtContainerFactory() {}
-	
-	public static AdtList adtList() { return AdtListImpl.valueOf(); }
-	public static AdtStack adtStack() { return AdtStackImpl.valueOf(); }
-	public static AdtQueue adtQueue() { return AdtQueueImpl.valueOf(); }
-	public static AdtArray adtArray() { return AdtArrayImpl.valueOf(); }
+	private AdtContainerFactory() {}
 
-	public static AdtList adtSingleConcatList() { return AdtListSingleConc.valueOf(); }
+	/**
+	 * @return AdtList based on an array
+     */
+	public static AdtList adtList() {
+		return AdtListImpl.valueOf();
+	}
+
+	/**
+	 * @return AdtStack based on an AdtList.
+     */
+	public static AdtStack adtStack() {
+		return AdtStackImpl.valueOf();
+	}
+
+	/**
+	 * @return AdtQueue based on two AdtStacks.
+     */
+	public static AdtQueue adtQueue() {
+		return AdtQueueImpl.valueOf();
+	}
+
+	/**
+	 * @return An AdtArray based on an AdtList.
+     */
+	public static AdtArray adtArray() {
+		return AdtArrayImpl.valueOf();
+	}
+
+	/**
+	 * @return AdtList based on an array with concatenation between the elements.
+     */
+	public static AdtList adtSingleConcatList() {
+		return AdtListSingleConc.valueOf();
+	}
 }

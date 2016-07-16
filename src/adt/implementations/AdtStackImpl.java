@@ -7,8 +7,7 @@ import adt.interfaces.AdtList;
 import adt.interfaces.AdtStack;
 
 /**
- * @author remen
- *
+ * A stack implementation by using an AdtList.
  */
 class AdtStackImpl implements AdtStack {
 	// ##################################################
@@ -20,43 +19,57 @@ class AdtStackImpl implements AdtStack {
 	// methods
 	// ##################################################
 	private AdtStackImpl() {}
-	
-	public static AdtStack valueOf() { return new AdtStackImpl(); }
+
+	/**
+	 * Serves as a factory method.
+     */
+	static AdtStack valueOf() {
+		return new AdtStackImpl();
+	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtStack#isEmpty()
 	 */
-	@Override public boolean isEmpty() { 
+	@Override
+	public boolean isEmpty() {
 		return adtList.isEmpty(); 
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtStack#push(int)
 	 */
-	@Override public void push(int elem) {
+	@Override
+	public void push(int elem) {
 		adtList.insert(adtList.length() + 1, elem);
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtStack#pop()
 	 */
-	@Override public void pop() {
+	@Override
+	public void pop() {
 		adtList.delete(adtList.length());
 	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtStack#top()
 	 */
-	@Override public int top() {
+	@Override
+	public int top() {
 		return adtList.retrieve(adtList.length());
 	}
 	
 	// ##################################################
 	// bonus
 	// ##################################################
-	@Override public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof AdtStack)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof AdtStack)) {
+			return false;
+		}
 		
 		// The following is necessary, because of the
 		// imperative nature of this class. It's
@@ -78,8 +91,14 @@ class AdtStackImpl implements AdtStack {
 		fromStackToStack(backUpStack, obj);
 		return equal;
 	}
+
+	@Override
+	public int hashCode() {
+		return adtList.hashCode();
+	}
 	
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		String adtListName = adtList.getClass().getSimpleName();
 		String ownName = getClass().getSimpleName();
 		

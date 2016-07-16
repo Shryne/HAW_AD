@@ -33,22 +33,12 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/progress">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/Starter.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/adt/AdtListSingleConc.java">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/src/adt/benchmark/Benchmark.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/adt/implementations/AdtArrayImpl.java">
           <value>
             <set />
           </value>
@@ -63,37 +53,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtAllTests.java">
+        <entry key="$PROJECT_DIR$/src/adt/implementations/AdtQueueImpl.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtArrayTest.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.java">
+        <entry key="$PROJECT_DIR$/src/adt/implementations/AdtStackImpl.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AdtListTest.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/adt/implementations/tests/AlternativeAdtListTest.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/adt/interfaces/AdtArray.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/benchmark/Benchmark.java">
           <value>
             <set />
           </value>
@@ -114,11 +84,6 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/sort/SelectionSort.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/sort/Sort.java">
           <value>
             <set />
           </value>

@@ -7,28 +7,33 @@ import adt.interfaces.AdtArray;
 import adt.interfaces.AdtList;
 
 /**
- * @author remen
- *
+ * Implementation of an array by using a list.
  */
 class AdtArrayImpl implements AdtArray {
 	// ##################################################
 	// variables
 	// ##################################################
-	private final static int FILLER = 0;
-	private final static int START_POS = 0;
-	
+	private static final int FILLER = 0;
+	private static final int START_POS = 0;
+
 	private final AdtList adtList = AdtContainerFactory.adtList();
 	// ##################################################
 	// methods
 	// ##################################################
 	private AdtArrayImpl() {}
-	
-	public static AdtArray valueOf() { return new AdtArrayImpl(); }
+
+	/**
+	 * Serves as a factory method.
+     */
+	static AdtArray valueOf() {
+		return new AdtArrayImpl();
+	}
 
 	/* (non-Javadoc)
 	 * @see adt.container.interfaces.AdtArray#length()
 	 */
-	@Override public int length() { 
+	@Override
+	public int length() {
 		return adtList.length() - 1;
 	}
 
@@ -37,7 +42,9 @@ class AdtArrayImpl implements AdtArray {
 	 */
 	@Override
 	public void set(int pos, int elem) {
-		if (pos > adtList.length()) fillTo(pos);
+		if (pos > adtList.length()) {
+			fillTo(pos);
+		}
 		
 		adtList.insert(pos + 1, elem);
 		adtList.delete(pos + 2);
@@ -55,19 +62,32 @@ class AdtArrayImpl implements AdtArray {
 	// ##################################################
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof AdtArray)) return false;
+		if (this == o) {
+			return true;
+		} else if (!(o instanceof AdtArray))  {
+			return false;
+		}
 		
 		AdtArray obj = (AdtArray) o;
-		if (length() != obj.length()) return false;
+		if (length() != obj.length()) {
+			return false;
+		}
 		
 		for (int i = START_POS; i <= length(); i++)
-			if (get(i) != obj.get(i)) return false;
+			if (get(i) != obj.get(i)) {
+				return false;
+			}
 		
 		return true;
 	}
+
+	@Override
+	public int hashCode() {
+		return adtList.hashCode();
+	}
 	
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		String adtListName = adtList.getClass().getSimpleName();
 		String ownName = getClass().getSimpleName();
 		

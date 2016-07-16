@@ -8,8 +8,7 @@ import java.util.Arrays;
 import adt.interfaces.AdtList;
 
 /**
- * @author remen
- *
+ * A list implementation based on an array.
  */
 class AdtListImpl implements AdtList {
 	// ##################################################

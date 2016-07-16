@@ -2,19 +2,13 @@ package sort.tests;
 
 import adt.implementations.AdtContainerFactory;
 import adt.interfaces.AdtArray;
-import adt.interfaces.AdtContainer;
 import org.junit.Test;
-import org.junit.experimental.theories.Theories;
-import org.junit.experimental.theories.Theory;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import sort.InsertionSort;
 import sort.SelectionSort;
 import sort.Sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
 
