@@ -33,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/progress">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/adt/benchmark/Benchmark.java">
           <value>
             <set />
@@ -84,6 +89,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/sort/SelectionSort.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/sort/ShellSort.java">
           <value>
             <set />
           </value>
