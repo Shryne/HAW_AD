@@ -9,9 +9,11 @@ import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import sort.InsertionSort;
+import sort.SelectionSort;
 import sort.Sort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
@@ -75,7 +77,12 @@ public class SortTests {
 
     private static ArrayList<Sort> createSorts() {
         ArrayList<Sort> result = new ArrayList<>(4);
-        result.add(new InsertionSort());
+        result.addAll(
+                Arrays.asList(
+                        new InsertionSort(),
+                        new SelectionSort()
+                )
+        );
 
         return result;
     }
