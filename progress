@@ -120,13 +120,13 @@ PLANS
 FEELING
 
 -----------------------------------------------------------------------
-2 h
+2 h - 19:10
 16.07.2016 - -
 DONE
 - implemented shell sort
 - fixed the tests
 - fixed selection sort
-- implemented and tested shell sort
+- implemented and tested shell sort, bubble sort
 
 PROBLEMS
 - it's annoying to have all these differences between the real length and start from normal array

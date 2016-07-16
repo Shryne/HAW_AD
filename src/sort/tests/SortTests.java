@@ -3,10 +3,7 @@ package sort.tests;
 import adt.implementations.AdtContainerFactory;
 import adt.interfaces.AdtArray;
 import org.junit.Test;
-import sort.InsertionSort;
-import sort.SelectionSort;
-import sort.ShellSort;
-import sort.Sort;
+import sort.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,7 +79,8 @@ public class SortTests {
                 Arrays.asList(
                         new InsertionSort(),
                         new SelectionSort(),
-                        new ShellSort()
+                        new ShellSort(),
+                        new Bubblesort()
                 )
         );
 

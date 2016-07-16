@@ -3,12 +3,10 @@ package sort;
 import adt.interfaces.AdtArray;
 
 /**
- * Selection sort:
- * Swaps the currently view element on index i with
- * the smallest element in the range from i + 1 to
- * length.
+ * Bubble sort:
+ *
  */
-public class SelectionSort implements Sort {
+public class Bubblesort implements Sort {
     // ##################################################
     // variables
     // ##################################################
@@ -18,11 +16,8 @@ public class SelectionSort implements Sort {
     // ##################################################
     @Override
     public void sort(AdtArray array) {
-        if (array != null) {
-            for (int i = 0; i <= array.length() - 1; i++) {
-                int minIndex = findMinStartingAt(i, array);
-                swap(array, i, minIndex);
-            }
+        for (int i = 0; i <= array.length(); i++) {
+            pushBiggestToEnd(array, array.length() - i);
         }
     }
     // ##################################################
@@ -32,14 +27,12 @@ public class SelectionSort implements Sort {
     // ##################################################
     // private helper
     // ##################################################
-    private static int findMinStartingAt(int startIndex, AdtArray array) {
-        int minIndex = startIndex;
-        for (int i = startIndex + 1; i <= array.length(); i++) {
-            if (array.get(i) < array.get(minIndex)) {
-                minIndex = i;
+    private static void pushBiggestToEnd(AdtArray array, int endIndex) {
+        for (int j = 0; j < endIndex; j++) {
+            if (array.get(j) > array.get(j + 1)) {
+                swap(array, j, j + 1);
             }
         }
-        return minIndex;
     }
 
     private static void swap(AdtArray array, int index1, int index2) {
