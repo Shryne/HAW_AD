@@ -81,8 +81,8 @@ public class SortTests {
         result.addAll(
                 Arrays.asList(
                         new InsertionSort(),
-                        new SelectionSort()
-                        //new ShellSort()
+                        new SelectionSort(),
+                        new ShellSort()
                 )
         );
 

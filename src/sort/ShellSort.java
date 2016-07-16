@@ -18,11 +18,10 @@ public class ShellSort implements Sort {
     // ##################################################
     @Override
     public void sort(AdtArray array) {
-        int distance = distance(array.length());
+        int distance = distance(array.length() + 1);
         for (; distance > 0; distance = (distance - 1) / 3) {
             insertionSort(array, distance);
         }
-
     }
 
     // ##################################################
@@ -39,7 +38,7 @@ public class ShellSort implements Sort {
     }
 
     private static void insertionSort(AdtArray array, int distance) {
-        for (int i = distance; i <= distance; i += distance) {
+        for (int i = distance; i <= array.length(); i += distance) {
             putInRange(array, i, distance);
         }
     }
@@ -48,7 +47,7 @@ public class ShellSort implements Sort {
         int indexForElem = elemIndex;
         int elemToInsert = array.get(elemIndex);
 
-        while ((indexForElem - distance) > 0 &&
+        while (0 <= (indexForElem - distance) &&
                 array.get(indexForElem - distance) > elemToInsert) {
 
             array.set(indexForElem, array.get(indexForElem - distance));
