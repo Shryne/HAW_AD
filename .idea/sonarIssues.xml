@@ -93,6 +93,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/sort/CombSort.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/sort/InsertionSort.java">
           <value>
             <set />
@@ -113,12 +118,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/sort/ShakerSort.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/sort/Shakersort.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/sort/ShellSort.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/sort/Sort.java">
           <value>
             <set />
           </value>

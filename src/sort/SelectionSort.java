@@ -17,7 +17,7 @@ public class SelectionSort implements Sort {
         if (array != null) {
             for (int i = 0; i <= array.length() - 1; i++) {
                 int minIndex = findMinStartingAt(i, array);
-                swap(array, i, minIndex);
+                Sort.swap(array, i, minIndex);
             }
         }
     }
@@ -32,11 +32,5 @@ public class SelectionSort implements Sort {
             }
         }
         return minIndex;
-    }
-
-    private static void swap(AdtArray array, int index1, int index2) {
-        int temp = array.get(index1);
-        array.set(index1, array.get(index2));
-        array.set(index2, temp);
     }
 }

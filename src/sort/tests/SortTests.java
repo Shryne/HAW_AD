@@ -81,7 +81,8 @@ public class SortTests {
                         new SelectionSort(),
                         new ShellSort(),
                         new BubbleSort(),
-                        new ShakerSort()
+                        new ShakerSort(),
+                        new CombSort()
                 )
         );
 
