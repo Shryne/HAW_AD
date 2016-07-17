@@ -2,6 +2,11 @@ package sort;
 
 import adt.interfaces.AdtArray;
 
+/**
+ * Shakers sort:
+ * Like bubble sort, but going from left to right and from
+ * right to left alternately.
+ */
 public class Shakersort implements Sort {
     // ##################################################
     // variables
@@ -12,27 +17,13 @@ public class Shakersort implements Sort {
     // ##################################################
     @Override
     public void sort(AdtArray array) {
-        //for (int i = 0; i <= array.length(); i++) {
-            //pushBiggestToEnd(array, array.length() - i);
-        //}
-
         for (int i = 0; i <= array.length(); i++) {
-            boolean swapped = false;
+            boolean swapped = pushBiggestToRight(array, i, array.length() - i);
+            swapped = pushSmallestToLeft(array, array.length() - i - 2, i) || swapped;
 
-            for (int r = i; r < array.length() - i; r++) {
-                if (array.get(r) > array.get(r + 1)) {
-                    swap(array, r, r + 1);
-                    swapped = true;
-                }
+            if (!swapped) {
+                return;
             }
-
-            for (int l = array.length() - i - 2; l > i; l--) {
-                if (array.get(l - 1) > array.get(l)) {
-                    swap(array, l - 1, l);
-                    swapped = true;
-                }
-            }
-            if (!swapped) break;
         }
     }
     // ##################################################
@@ -42,23 +33,33 @@ public class Shakersort implements Sort {
     // ##################################################
     // private helper
     // ##################################################
-    private static void pushBiggestToEnd(AdtArray array, int endIndex) {
-        for (int j = 0; j < endIndex; j++) {
-            if (array.get(j) > array.get(j + 1)) {
-                swap(array, j, j + 1);
+    private static boolean pushBiggestToRight(AdtArray array, int startIndex, int endIndex) {
+        boolean swapped = false;
+
+        for (int r = startIndex; r < endIndex; r++) {
+            if (array.get(r) > array.get(r + 1)) {
+                swap(array, r, r + 1);
+                swapped = true;
             }
         }
+        return swapped;
+    }
+
+    private static boolean pushSmallestToLeft(AdtArray array, int startIndex, int endIndex) {
+        boolean swapped = false;
+
+        for (int l = startIndex; l > endIndex; l--) {
+            if (array.get(l - 1) > array.get(l)) {
+                swap(array, l - 1, l);
+                swapped = true;
+            }
+        }
+        return swapped;
     }
 
     private static void swap(AdtArray array, int index1, int index2) {
         int temp = array.get(index1);
         array.set(index1, array.get(index2));
         array.set(index2, temp);
-    }
-
-    private static void swapStartEnd(Integer newStart, Integer newEnd) {
-        Integer temp = newEnd;
-        newEnd = newStart;
-        newStart = newEnd;
     }
 }
