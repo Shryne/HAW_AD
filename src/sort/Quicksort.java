@@ -1,5 +1,7 @@
 package sort;
 
+import adt.interfaces.AdtArray;
+
 /**
  * Quick sort:
  * Sorts by taking a pivot element in the current range from
@@ -8,6 +10,15 @@ package sort;
  * second from i / 2 + 1 to j. The sort is beeing repeated for
  * these two ranges until the length of the ranges is 1.
  */
-public class QuickSort {
+public class QuickSort implements Sort {
+    // ##################################################
+    // methods
+    // ##################################################
+    @Override
+    public void sort(AdtArray array) {
 
+    }
+    // ##################################################
+    // private helper
+    // ##################################################
 }

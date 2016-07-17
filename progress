@@ -145,6 +145,7 @@ FEELING
 9:40
 17.07.2016 - -
 DONE
+- implemented and tested shakers sort
 
 PROBLEMS
 - There is a bug in array.delete. I should fix it some day and improve my tests for it

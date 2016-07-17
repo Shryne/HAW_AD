@@ -7,11 +7,7 @@ import adt.interfaces.AdtArray;
  * Like bubble sort, but going from left to right and from
  * right to left alternately.
  */
-public class Shakersort implements Sort {
-    // ##################################################
-    // variables
-    // ##################################################
-
+public class ShakerSort implements Sort {
     // ##################################################
     // methods
     // ##################################################
@@ -26,10 +22,6 @@ public class Shakersort implements Sort {
             }
         }
     }
-    // ##################################################
-    // bonus
-    // ##################################################
-
     // ##################################################
     // private helper
     // ##################################################
