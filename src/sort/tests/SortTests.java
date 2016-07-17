@@ -80,7 +80,8 @@ public class SortTests {
                         new InsertionSort(),
                         new SelectionSort(),
                         new ShellSort(),
-                        new Bubblesort()
+                        new Bubblesort(),
+                        new Shakersort()
                 )
         );
 

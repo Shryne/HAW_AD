@@ -120,19 +120,37 @@ PLANS
 FEELING
 
 -----------------------------------------------------------------------
-2 h - 19:10
-16.07.2016 - -
+16.07.2016 - 3 h - 16 h
 DONE
 - implemented shell sort
 - fixed the tests
 - fixed selection sort
 - implemented and tested shell sort, bubble sort
+- started to implement shakers sort
 
 PROBLEMS
 - it's annoying to have all these differences between the real length and start from normal array
 and lists (in general: collections) and the ones from my own implemented collections (which I
 had to do this way, because it was given by the exercise)
+- I hate the fact, that you can't write a method to swap two primitives without using two objects
+to hold them
+- calculating the starts and ends for shaker sort is a little bit tricky
+
+PLANS
+- implement the other sorting algorithms from the sheets
+
+FEELING
+- adequate. Implementing the sorts is a decent exercise
+-----------------------------------------------------------------------
+9:40
+17.07.2016 - -
+DONE
+
+PROBLEMS
+- There is a bug in array.delete. I should fix it some day and improve my tests for it
 
 PLANS
 
 FEELING
+
+-----------------------------------------------------------------------

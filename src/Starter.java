@@ -12,6 +12,21 @@ public class Starter {
     private static final char DELIMETER = ';';
 
     public static void main(String[] args) {
-        AdtList list = adtList();
+        int a = 10;
+        int b = 20;
+
+        a = getItself(b, b = a);
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static int getItself(int itself, int dummy) {
+        return itself;
+    }
+
+    private static void swapStartEnd(Integer newStart, Integer newEnd) {
+        Integer temp = newEnd;
+        newEnd = newStart;
+        newStart = newEnd;
     }
 }
