@@ -142,15 +142,30 @@ PLANS
 FEELING
 - adequate. Implementing the sorts is a decent exercise
 -----------------------------------------------------------------------
-9:40
-17.07.2016 - -
+1:30 h
+17.07.2016 - 1:30 h - 17:30 h
 DONE
 - implemented and tested shakers sort
+- implemented and tested comb sort
 
 PROBLEMS
-- There is a bug in array.delete. I should fix it some day and improve my tests for it
+- there is a bug in array.delete. I should fix it some day and improve my tests for it
 
 PLANS
+
+FEELING
+
+-----------------------------------------------------------------------
+19.07.2016 - 0:10 - 17:40 h
+DONE
+- added some classes from the original projects for the next exercises
+
+PROBLEMS
+- my old AvlTree implementation seems to be a mess
+- the HashMap implementation doesn't look better
+
+PLANS
+- refactoring AdtAvlTree
 
 FEELING
 
